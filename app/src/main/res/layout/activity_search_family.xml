@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".view.SearchFamilyActivity">
+
+    <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:elevation="6dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="Cari Anggota Keluarga"
+                tools:targetApi="lollipop" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_layout"
+            android:ems="10"
+            android:hint="Masukan Nama"
+            android:inputType="textPersonName"
+            android:paddingBottom="8dp"
+            android:paddingEnd="9dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="9dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category"
+            tools:ignore="HardcodedText"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="24dp" />
+
+    <com.santalu.widget.MaskEditText
+            android:id="@+id/phoneSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_layout"
+            android:hint="+62"
+            android:inputType="phone"
+            android:paddingBottom="8dp"
+            android:paddingEnd="9dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="9dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category"
+            app:met_mask="+62 ###-####-####"
+            tools:ignore="HardcodedText"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="10dp" />
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/familySearch"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="62dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category"/>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:srcCompat="@drawable/ic_search_family"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@+id/searchInput"
+            app:layout_constraintTop_toTopOf="@+id/searchInput"/>
+
+    <RadioGroup
+            android:id="@+id/category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+        <RadioButton
+                android:id="@+id/src_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Nama" />
+
+        <RadioButton
+                android:id="@+id/src_nomor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:text="Nomor Telpon" />
+    </RadioGroup>
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Madres</string>
+    <string name="nameApp">Madres</string>
+    <string name="txt1">Mobile App Disaster Rescue</string>
+    <string name="rescue">Mobile App Disaster Rescue</string>
+    <string name="who">Siapa Kamu?</string>
+    <string name="korbanTxt">Sebagai Korban</string>
+    <string name="descKorban">Mencari bantuan dari relawan atau dari keluarga korban</string>
+    <string name="notify1">Aplikasi Akan Mengirim SMS Berupa Kode Verifikasi pada Nomor dibawah ini:</string>
+    <string name="keluargaTxt">Sebagai Keluarga</string>
+    <string name="descKeluarga">Mencari anggota keluarga yang belum ditemukan</string>
+    <string name="relawanTxt">Sebagai Relawan</string>
+    <string name="descRelawan">Mencari dan membantu korban bencana untuk di evakuasi</string>
+    <string name="show_in_map">Cari Bantuan di Peta</string>
+    <string name="fetch_location">Mengambil Lokasi</string>
+    <string name="location">Lokasi Yang di Ambil</string>
+    <string name="txtLogin">Masuk</string>
+    <string name="noid">+62</string>
+    <string name="inputNomor">Nomor Telepon</string>
+    <string name="inputNama">Masukan Nama</string>
+    <string name="intro">Selamat Datang di Madres</string>
+    <string name="txtProgressVer">Sedang memverifikasi</string>
+    <string name="verifikasi">Verifikasi</string>
+    <string name="kodeVer">Masukan 6 Digit Kode</string>
+    <string name="txt77">Mobile App Disaster Rescue</string>
+    <string name="tentang">Tentang</string>
+    <string name="shareloct">Share location</string>
+    <string name="mapapi">AIzaSyCEcSeRWDe5jeOWHE9xJltU29PU--y6nIw</string>
+</resources>

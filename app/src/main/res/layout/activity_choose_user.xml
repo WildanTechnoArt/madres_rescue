@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent"
+              tools:context=".view.ChooseUser">
+
+    <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:elevation="6dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="Madres"
+                tools:targetApi="lollipop"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+            android:id="@+id/sampul"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1.8"
+                app:srcCompat="@drawable/ic_white_fire"
+                tools:ignore="NestedWeights,RtlHardcoded"
+                android:layout_marginStart="8dp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/app_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/txt77"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold|italic" android:textSize="20sp"/>
+
+    </LinearLayout>
+
+
+    <TableLayout
+            android:id="@+id/tabmenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp">
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp" android:id="@+id/iamVictim" android:layout_weight="3">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/menu_round_button"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:ignore="ContentDescription"
+                            app:srcCompat="@drawable/ic_korban" android:layout_weight="1" android:padding="8dp"/>
+                    <TextView
+                            android:text="@string/korbanTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:textSize="17sp"
+                            android:textStyle="bold" android:layout_weight="5"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp" android:id="@+id/iamFamily" android:layout_weight="3">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/menu_round_button"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/family_silhouette"
+                            tools:ignore="ContentDescription" android:layout_weight="1" android:padding="8dp"/>
+                    <TextView
+                            android:text="@string/keluargaTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:textSize="17sp"
+                            android:textStyle="bold" android:layout_weight="5"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </TableRow>
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" android:visibility="visible">
+
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:layout_weight="3"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp" android:id="@+id/iamVolunteer">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/menu_round_button"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/medical_kit"
+                            tools:ignore="ContentDescription" android:layout_weight="1" android:padding="8dp"/>
+                    <TextView
+                            android:text="@string/relawanTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:id="@+id/textView3" android:textSize="17sp"
+                            android:textStyle="bold" android:layout_weight="5"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/about"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:layout_weight="3"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/menu_round_button"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:ignore="ContentDescription" app:srcCompat="@drawable/ic_about"
+                            android:layout_weight="1" android:padding="8dp"/>
+                    <TextView
+                            android:text="@string/tentang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:id="@+id/textView4" android:textSize="17sp"
+                            android:textStyle="bold" android:layout_weight="5"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

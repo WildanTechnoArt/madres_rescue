@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.unpi.madres">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+        <activity android:name=".view.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data
+                android:name="com.google.android.gsm.version"
+                android:value="@integer/google_play_services_version"/>
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/mapapi"/>
+
+        <activity android:name=".view.FamilyActivity">
+        </activity>
+        <activity android:name=".view.ChooseUser">
+        </activity>
+        <activity android:name=".view.VictimActivity">
+        </activity>
+        <activity android:name=".map.VictimMapActivity">
+        </activity>
+        <activity android:name=".view.VerifyActivity">
+        </activity>
+        <activity android:name=".view.FamilyCircleActivity">
+        </activity>
+        <activity android:name=".view.VolunteerCircleActivity">
+        </activity>
+        <activity android:name=".map.MapVolunteerActivity">
+        </activity>
+        <activity android:name=".map.MapFamilyActivity">
+        </activity>
+        <activity android:name=".view.SearchFamilyActivity">
+        </activity>
+    </application>
+
+</manifest>
