@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/F:/Aplikasi/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/alert/ic_error_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio1/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_add_location_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,12 +28,12 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="d40101" />
-                            <entry key="height" value="128" />
-                            <entry key="outputName" value="ic_about" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="height" value="32" />
+                            <entry key="outputName" value="ic_pin_hospital" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\wildan" />
-                            <entry key="width" value="128" />
+                            <entry key="width" value="32" />
                           </map>
                         </option>
                       </PersistentState>

@@ -1,70 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:orientation="vertical"
-              android:layout_height="match_parent"
-              tools:context=".view.ChooseUser">
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.ChooseUser">
 
     <android.support.design.widget.AppBarLayout
-            android:id="@+id/appbar"
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:fitsSystemWindows="true"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:background="@color/colorPrimaryDark"
+            android:elevation="6dp"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop">
 
         <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/dashboard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
                 android:elevation="6dp"
+                app:title="Dashboard"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:title="Madres"
-                tools:targetApi="lollipop"/>
+                app:titleTextColor="@android:color/background_light"/>
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
-            android:id="@+id/sampul"
+
+    <View
+            android:id="@+id/center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.7"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayout" />
 
-        <android.support.v7.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_weight="1.8"
-                app:srcCompat="@drawable/ic_white_fire"
-                tools:ignore="NestedWeights,RtlHardcoded"
-                android:layout_marginStart="8dp"/>
-
-        <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/app_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/txt77"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold|italic" android:textSize="20sp"/>
-
-    </LinearLayout>
-
+    <ImageView
+            android:id="@+id/logo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_red_dark"
+            app:layout_constraintBottom_toTopOf="@+id/center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:srcCompat="@drawable/madreslogo" tools:ignore="ContentDescription" android:paddingTop="8dp"/>
 
     <TableLayout
             android:id="@+id/tabmenu"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:padding="8dp"
             android:layout_weight="1"
-            android:padding="8dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/center">
 
         <TableRow
                 android:layout_width="match_parent"
@@ -76,27 +73,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="6dp"
+                    android:layout_weight="3"
                     app:cardCornerRadius="6dp"
-                    app:cardElevation="4dp" android:id="@+id/iamVictim" android:layout_weight="3">
+                    app:cardElevation="3dp" android:id="@+id/iamVictim">
 
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/menu_round_button"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="8dp">
+                        android:padding="12dp" android:background="@drawable/menu_round_button">
 
                     <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            tools:ignore="ContentDescription"
-                            app:srcCompat="@drawable/ic_korban" android:layout_weight="1" android:padding="8dp"/>
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_korban"
+                            tools:ignore="ContentDescription"/>
+
                     <TextView
-                            android:text="@string/korbanTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" android:textSize="17sp"
-                            android:textStyle="bold" android:layout_weight="5"/>
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Sebagai Korban"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -104,93 +107,109 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="6dp"
+                    android:layout_weight="3"
                     app:cardCornerRadius="6dp"
-                    app:cardElevation="4dp" android:id="@+id/iamFamily" android:layout_weight="3">
+                    app:cardElevation="3dp" android:id="@+id/iamFamily">
 
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/menu_round_button"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="8dp">
+                        android:padding="12dp" android:background="@drawable/menu_round_button">
 
                     <ImageView
+                            android:id="@+id/imgfamily"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
                             app:srcCompat="@drawable/family_silhouette"
-                            tools:ignore="ContentDescription" android:layout_weight="1" android:padding="8dp"/>
+                            tools:ignore="ContentDescription,VectorDrawableCompat"/>
+
                     <TextView
-                            android:text="@string/keluargaTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" android:textSize="17sp"
-                            android:textStyle="bold" android:layout_weight="5"/>
+                            android:id="@+id/txtfamily"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Sebagai Keluarga"
+                            android:textSize="16sp"
+                            android:textStyle="bold" tools:ignore="HardcodedText"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
+
         </TableRow>
 
         <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center" android:visibility="visible">
+                android:gravity="center"
+                android:visibility="visible">
 
             <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="3"
                     app:cardCornerRadius="6dp"
-                    app:cardElevation="4dp" android:id="@+id/iamVolunteer">
+                    app:cardElevation="3dp" android:id="@+id/iamVolunteer">
 
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/menu_round_button"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+                        android:orientation="vertical" android:padding="12dp"
+                        android:background="@drawable/menu_round_button">
 
                     <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/medical_kit"
-                            tools:ignore="ContentDescription" android:layout_weight="1" android:padding="8dp"/>
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/medical_kit" tools:ignore="ContentDescription,InefficientWeight"
+                    />
+
                     <TextView
-                            android:text="@string/relawanTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" android:id="@+id/textView3" android:textSize="17sp"
-                            android:textStyle="bold" android:layout_weight="5"/>
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Sebagai Relawan"
+                            android:textSize="16sp"
+                            android:textStyle="bold" tools:ignore="HardcodedText"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                    android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="3"
                     app:cardCornerRadius="6dp"
-                    app:cardElevation="4dp">
+                    app:cardElevation="3dp" android:id="@+id/about">
 
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/menu_round_button"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+                        android:orientation="vertical" android:padding="12dp"
+                        android:background="@drawable/menu_round_button">
 
                     <ImageView
+                            android:id="@+id/imgabout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            tools:ignore="ContentDescription" app:srcCompat="@drawable/ic_about"
-                            android:layout_weight="1" android:padding="8dp"/>
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_about"
+                            tools:ignore="ContentDescription,InefficientWeight,VectorDrawableCompat"
+                    />
+
                     <TextView
-                            android:text="@string/tentang"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" android:id="@+id/textView4" android:textSize="17sp"
-                            android:textStyle="bold" android:layout_weight="5"/>
+                            android:id="@+id/txtabout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="About"
+                            android:textSize="16sp"
+                            android:textStyle="bold" tools:ignore="HardcodedText"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -198,4 +217,5 @@
 
     </TableLayout>
 
-</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

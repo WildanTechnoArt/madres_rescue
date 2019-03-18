@@ -7,16 +7,14 @@ import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Switch;
 import android.widget.Toast;
 import com.google.android.gms.location.*;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
 import com.unpi.madres.R;
@@ -33,6 +31,7 @@ public class VictimMapActivity extends AppCompatActivity implements OnMapReadyCa
     private FusedLocationProviderClient providerClient;
     private LocationCallback locationCallback;
     private Switch aSwitch;
+    private BitmapDescriptor bitmapDescriptorFactory;
 
     // Firebase
     private DatabaseReference toVolunteerRef;
@@ -43,6 +42,9 @@ public class VictimMapActivity extends AppCompatActivity implements OnMapReadyCa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.unpi.madres.R.layout.activity_maps);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         aSwitch = findViewById(R.id.shareLocation);
 
@@ -71,6 +73,57 @@ public class VictimMapActivity extends AppCompatActivity implements OnMapReadyCa
                         }));
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.victim_option, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.ambulanceCoor:
+                bitmapDescriptorFactory = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN);
+                findLocation("Puskesmas Pembantu Menur Salatiga", -7.3202907, 110.4898446, bitmapDescriptorFactory);
+                break;
+
+            case R.id.fireCoor:
+                bitmapDescriptorFactory = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE);
+                findLocation("Pemadam Kebakaran Kota Salatiga", -7.3333232, 110.5017898, bitmapDescriptorFactory);
+                break;
+        }
+        return true;
+    }
+
+    @SuppressWarnings("SameParameterValue")
+    private void findLocation(String title, Double lat, Double lang, BitmapDescriptor bitmapDescriptor){
+        mMap.clear();
+
+        onLocationChanged(mLocation);
+
+        LatLng vicimLocation = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
+        LatLng hospitalLocation = new LatLng(lat, lang);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(hospitalLocation);
+        markerOptions.title(title);
+        markerOptions.icon(bitmapDescriptorFactory);
+
+        LatLngBounds.Builder latLongBuilder = new LatLngBounds.Builder();
+        latLongBuilder.include(vicimLocation);
+        latLongBuilder.include(hospitalLocation);
+
+        // Bounds Coordinata
+        LatLngBounds bounds = latLongBuilder.build();
+
+        int width = getResources().getDisplayMetrics().widthPixels;
+        int height = getResources().getDisplayMetrics().heightPixels;
+        int paddingMap = (int) (width * 0.2); //jarak dari
+        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, width, height, paddingMap);
+        mMap.animateCamera(cu);
+
+        mMap.addMarker(markerOptions);
     }
 
     private void initMap() {
@@ -114,8 +167,8 @@ public class VictimMapActivity extends AppCompatActivity implements OnMapReadyCa
                 } else {
                     for (Location location : locationResult.getLocations()) {
                         mLocation = location;
-                        onLocationChanged(location);
                     }
+                    onLocationChanged(mLocation);
                 }
             }
         };

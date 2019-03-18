@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/ambulanceCoor"
+          android:title="@string/txtIcAMbulance"
+          android:icon="@drawable/ic_pin_hospital"
+          app:showAsAction="always"/>
+
+    <item android:id="@+id/fireCoor"
+          android:title="@string/searchFire"
+          android:icon="@drawable/ic_fire"
+          app:showAsAction="always" tools:ignore="AlwaysShowAction"/>
+
+    <item android:id="@+id/searchVolunteer"
+          android:title="@string/cari_relawan"
+          app:showAsAction="never"/>
+
+</menu>

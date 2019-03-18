@@ -26,4 +26,7 @@
     <string name="tentang">Tentang</string>
     <string name="shareloct">Share location</string>
     <string name="mapapi">AIzaSyCEcSeRWDe5jeOWHE9xJltU29PU--y6nIw</string>
+    <string name="txtIcAMbulance">Lokasi ambulan terdekat</string>
+    <string name="searchFire">Lokasi pemadam kebakaran terdekat</string>
+    <string name="cari_relawan">Cari Relawan</string>
 </resources>
